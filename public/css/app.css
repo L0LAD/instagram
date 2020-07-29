@@ -218,13 +218,22 @@ img {
   border-style: none;
 }
 
-.image-square {
+.image-ratio-1 {
   position:relative;
   overflow:hidden;
   padding-bottom:100%;
 }
 
-.image-square img{
+.image-circle img {
+  border-radius: 50%;
+  position:absolute;
+  min-height:100%;
+  max-height:170%;
+  min-width:100%;
+  max-width:170%;
+}
+
+.image-ratio-1 img{
     position:absolute;
     min-height:100%;
     max-height:170%;
@@ -12002,4 +12011,3 @@ a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
-

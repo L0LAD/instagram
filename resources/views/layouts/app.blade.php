@@ -28,7 +28,7 @@
 
                 <!-- Branding Image -->
                 <a href="{{ url('/') }}" class="d-flex align-items-center navbar-brand">
-                    <div><img src="svg/instagram_logo.svg" class="pr-3" style="height: 25px; border-right: 1px solid #777"></div>
+                    <div><img src="/svg/instagram_logo.svg" class="pr-3" style="height: 25px; border-right: 1px solid #777"></div>
                     <div class="pl-3">Instagram</div>
                 </a>
 
