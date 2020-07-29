@@ -7,7 +7,7 @@
             <img src="img/profile_travel.jpg" class="rounded-circle" style="max-height: 200px; padding: 0 10%;">
         </div>
         <div class="col-md-9 pt-5">
-            <div><h1>Globe_dreamer</h1></div>
+            <div><h1>{{ Auth::user()->username }}</h1></div>
             <div class="d-flex">
                 <div class="pl-5"><strong>96</strong> posts</div>
                 <div class="pl-5"><strong>1.8k</strong> followers</div>
