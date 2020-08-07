@@ -218,27 +218,23 @@ img {
   border-style: none;
 }
 
-.image-ratio-1 {
-  position:relative;
-  overflow:hidden;
-  padding-bottom:100%;
+.image-square {
+  width:300px;
+  height:300px;
+  object-fit:cover;
 }
 
-.image-circle img {
+.image-circle {
+  width:300px;
+  height:300px;
+  object-fit:cover;
   border-radius: 50%;
-  position:absolute;
-  min-height:100%;
-  max-height:170%;
-  min-width:100%;
-  max-width:170%;
 }
 
-.image-ratio-1 img{
-    position:absolute;
-    min-height:100%;
-    max-height:170%;
-    min-width:100%;
-    max-width:170%;
+.image-profile {
+  max-width: 30vh;
+  max-height: 30vh;
+  margin: 0 10%;
 }
 
 svg {
