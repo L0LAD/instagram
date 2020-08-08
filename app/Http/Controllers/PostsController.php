@@ -28,9 +28,14 @@ class PostsController extends Controller
       ->withInput();
     }
 
+    $caption = $request['caption'];
+    $imagePath = $request['image']->store('uploads', 'public');
+
     auth()->user()->posts()->create([
-      'caption' => $request['caption'],
-      'image' => $request['image']
+      'caption' => $caption,
+      'image' => $imagePath
     ]);
+
+    return redirect('/profile/'. auth()->user()->id);
   }
 }
