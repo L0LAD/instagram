@@ -10,7 +10,7 @@
 
         <div class="form-group row{{ $errors->has('caption') ? ' has-error' : '' }}">
           <label for="caption" class="col-md-4 col-form-label">Post Caption</label>
-          <input id="caption" type="text" class="form-control" name="caption" value="{{ old('caption') }}" required autofocus>
+          <input id="caption" type="text" class="form-control" name="caption" value="{{ old('caption') }}" required>
 
           @if ($errors->has('caption'))
           <span class="help-block">
@@ -19,9 +19,9 @@
           @endif
         </div>
 
-        <div class="form-group row{{ $errors->has('caption') ? ' has-error' : '' }}">
+        <div class="form-group row{{ $errors->has('image') ? ' has-error' : '' }}">
           <label for="image" class="col-md-4 col-form-label">Post Image</label>
-          <input id="image" type="file" class="form-control-file" name="image" value="{{ old('caption') }}" required autofocus>
+          <input id="image" type="file" class="form-control-file" name="image" value="{{ old('image') }}" required>
 
           @if ($errors->has('image'))
           <span class="help-block">
