@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class ProfilesController extends Controller {
   public function index(User $user) {
@@ -17,7 +18,7 @@ class ProfilesController extends Controller {
 
   public function update(User $user, Request $request) {
     $this->authorize('update', $user->profile);
-    
+
     $dataValidator = \Validator::make($request->all(), [
       'title' => 'required',
       'description' => '',
@@ -30,6 +31,15 @@ class ProfilesController extends Controller {
       ->withErrors($dataValidator)
       ->withInput();
     }
+
+    if ($request['image']) {
+      $imagePath = $request['image']->store('profile', 'public');
+
+      $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
+      $image->save();
+    }
+
+    dd($request->all());
 
     auth()->user()->profile->update([
       'title' => $request['title'],
