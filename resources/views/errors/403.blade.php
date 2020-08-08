@@ -5,7 +5,7 @@
 <div class="error_principal">
   <div class="error_message">
     <h1>Oops</h1>
-    <p>The page you're looking for isn't here...</p>
+    <p>You are not allowed to do that...</p>
   </div>
   <div class="error_aura_1"></div>
   <div class="error_aura_2"></div>
