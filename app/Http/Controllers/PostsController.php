@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class PostsController extends Controller
 {
@@ -31,11 +32,21 @@ class PostsController extends Controller
     $caption = $request['caption'];
     $imagePath = $request['image']->store('uploads', 'public');
 
+    $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
+    // $image->resize(400, 400, function ($constraint) {
+    //   $constraint->aspectRatio();
+    // });
+    $image->save();
+
     auth()->user()->posts()->create([
       'caption' => $caption,
       'image' => $imagePath
     ]);
 
     return redirect('/profile/'. auth()->user()->id);
+  }
+
+  public function show(\App\Post $post) {
+    return view('posts.show', compact('post'));
   }
 }
