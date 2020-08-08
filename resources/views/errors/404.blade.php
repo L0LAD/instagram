@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Page not found - 404</title>
-</head>
-<body>
+@extends('layouts.app')
 
+@section('content')
 
-The page your looking for is not available
+<div class="error_principal">
+  <div class="error_message">
+    <h1>Oops</h1>
+    <p>The page you're looking for isn't here.</p>
+  </div>
+  <div class="error_aura_1"></div>
+  <div class="error_aura_2"></div>
+</div>
 
-</body>
-</html>
+@endsection
