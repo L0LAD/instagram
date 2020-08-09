@@ -42,7 +42,8 @@ class ProfilesController extends Controller {
     auth()->user()->profile->update([
       'title' => $request['title'],
       'url' => $request['url'],
-      'description' => $request['description']
+      'description' => $request['description'],
+      'image' => $imagePath
     ]);
 
     return redirect("/profile/".$user->id);

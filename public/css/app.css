@@ -213,6 +213,11 @@
     margin: 0 0 1rem;
   }
 
+  .post-card {
+    max-width:85%;
+    max-height:75%;
+  }
+
   img {
     vertical-align: middle;
     border-style: none;
@@ -235,6 +240,12 @@
     max-width: 30vh;
     max-height: 30vh;
     margin: 0 10%;
+  }
+
+  .image-profile-icon {
+    max-width: 7vh;
+    max-height: 7vh;
+    margin-right: 4%;
   }
 
   svg {
