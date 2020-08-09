@@ -2,23 +2,37 @@
 
 @section('content')
 <div class="container">
-  <div class="card post-card m-5">
+  <div class="card my-4">
     <div class="card-body">
       <div class="row">
-        <div class="col-8">
-          <img src="/storage/{{ $post->image}}" alt="/storage/{{ $post->title}}" class="w-100"/>
+        <div class="col-7">
+          <img src="/storage/{{ $post->image}}" alt="/storage/{{ $post->title}}" class="image-post"/>
         </div>
-        <div class="col-4">
-          <div class="d-flex align-items-center mb-3">
+        <div class="col-5">
+          <div class="d-flex align-items-center">
             <img src="/storage/{{ $post->user->profile->image }}" class="image-circle image-profile-icon">
-            <h5 style="font-weight:bold">{{ $post->user->username }}</h5>
+            <div class="d-flex">
+              <h5><a href="/profile/{{ $post->user->id }}">{{ $post->user->username }}</a></h5>
+              <span class="px-2">&bull;</span>
+              <a href="#" class="follow">Follow</a>
+            </div>
           </div>
           <hr />
-          <p>{{ $post->caption}}</p>
+          <div class="row">
+            <div class="col-2">
+              <img src="/storage/{{ $post->user->profile->image }}" class="image-circle image-profile-comment">
+            </div>
+            <div clas="col-10">
+              <p>
+                <a href="/profile/{{ $post->user->id }}">{{ $post->user->username }}</a>
+                <span>{{ $post->caption}}</span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    </div>
   </div>
+</div>
 
 @endsection
