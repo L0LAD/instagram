@@ -39,8 +39,6 @@ class ProfilesController extends Controller {
       $image->save();
     }
 
-    dd($request->all());
-
     auth()->user()->profile->update([
       'title' => $request['title'],
       'url' => $request['url'],
