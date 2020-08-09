@@ -37,7 +37,7 @@
             @else
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                <img src="/storage/{{ Auth::user()->profile->image }}" class="image-circle image-profile-navbar">
+                <img src="{{ Auth::user()->profile->profileImage() }}" class="image-circle image-profile-navbar">
               </a>
 
               <ul class="dropdown-menu" role="menu">
