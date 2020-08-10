@@ -49532,3 +49532,10 @@ if (false) {
 
 /***/ })
 /******/ ]);
+
+/* ------------------------------
+      Error pages
+------------------------------ */
+window.onload = function() {
+  document.querySelector('.error_principal').className= "error_principal error_message_active";
+}
