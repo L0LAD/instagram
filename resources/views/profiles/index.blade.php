@@ -10,7 +10,7 @@
       <div class="d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center">
           <h1>{{ $user->username }}</h1>
-          <follow-button></follow-button>
+          <follow-button user-id="{{ $user->id }}"></follow-button>
         </div>
         @can('update', $user->profile)
           <a href="/p/create">Add New Post</a>

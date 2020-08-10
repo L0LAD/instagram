@@ -49464,15 +49464,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['userId', 'follows'],
+
   mounted: function mounted() {
     console.log('Component mounted.');
   },
 
 
+  data: function data() {
+    return {
+      status: this.follows
+    };
+  },
+
   methods: {
     followUser: function followUser() {
-      axios.post('/follow/1').then(function (response) {
-        alert(response.data);
+      axios.post('/follow/' + this.userId).then(function (response) {
+        console.log(response.data);
       });
     }
   }
