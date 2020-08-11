@@ -14,6 +14,12 @@
           <a href="/p/{{ $post->id }}"><img src="/storage/{{ $post->image}}" alt="/storage/{{ $post->title}}" class="image-post"/></a>
         </div>
         <div class="card-footer">
+          <div class="row px-3">
+            <like-button user-id="{{ auth()->user()->id }}" follows="true"></like-button>
+            <i class="footer-icon far fa-comment"></i>
+            <i class="footer-icon far fa-paper-plane"></i>
+          </div>
+          <p>8 likes</p>
           <p>
             <a href="/profile/{{ $post->user->id }}">{{ $post->user->username }}</a>
             <span>{{ $post->caption}}</span>
